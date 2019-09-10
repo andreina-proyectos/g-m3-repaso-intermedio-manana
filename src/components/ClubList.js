@@ -7,9 +7,11 @@ class ClubList extends React.Component {
   render() {
     return (
       <ul className="clubs">
-        {this.props.clubs.map((club, index) => {
+        {this.props.clubs
+          .filter(item => item.name.toLowerCase().includes(this.props.paquery))
+          .map(club => {
           return (
-            <li className="club" key={index}>
+            <li className="club" key={club.id}>
               <Club 
                 name={club.name}
                 fa={club.fa}

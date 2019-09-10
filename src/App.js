@@ -8,14 +8,32 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      clubs: clubs
-    }
+      paquery: 'o',
+      clubs: this.setId(clubs)
+    };
+
+    this.pacFunction = this.pacFunction.bind(this);
   }
+
+  setId(arr) {
+    return arr.map((item, index) => {
+      return {...item, id: index}
+    })
+  }
+
+  pacFunction(event) {
+    const value = event.currentTarget.value;
+    this.setState({
+      paquery: value
+    });
+  } 
+
   render() {
     return (
       <div className="app">
         <h1 className="app__title">Lista de clubes</h1>
-        <ClubList clubs={this.state.clubs} />
+        <input type="text" onChange={this.pacFunction} />
+        <ClubList clubs={this.state.clubs} paquery={this.state.paquery}/>
       </div>
     );
   }
