@@ -1,0 +1,33 @@
+.card-club {
+  background-color: white;
+  border-radius: 3px;
+  padding: 15px;
+  display: flex;
+}
+.card-club__icon {
+  width: 150px;
+  text-align: center;
+  font-size: 60px;
+  color: #1c9d8d;
+}
+.card-club__content {}
+
+.card-club__name {
+  max-width: 230px;
+  margin-top: 0;
+}
+
+.card-club__members-list {
+  margin: 0 0 5px;
+  color: grey;
+  font-size: 14px;
+  }
+.card-club__members {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 160px 160px 160px;
+  grid-gap: 5px 10px;
+}
+.card-club__member {}
